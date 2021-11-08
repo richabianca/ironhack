@@ -70,7 +70,8 @@ LIMIT 10;
 #13. In the client table, of all districts with a district_id lower than 10, 
 #how many clients are from each district_id? Show the results sorted by the district_id 
 #in ascending order.
-select district_id, client_id from bank.client
+select district_id, client_id
+from bank.client
 where district_id < 10
 order by district_id asc; 
 #right answer is missing
@@ -80,10 +81,22 @@ order by district_id asc;
 select distinct type from bank.card
 order by type asc;
 
-#15.
-#16.
-#17.
-#18.
-#19.
-#20.
-#21.
+#15. Using the loan table, print the top 10 account_ids based on the sum of all of their loan amounts.
+
+
+#16. In the loan table, retrieve the number of loans issued for each day, before (excl) 930907, 
+#ordered by date in descending order.
+
+#17. In the loan table, for each day in December 1997, count the number of loans issued for each unique loan duration, ordered by date and duration, both in ascending order. 
+#You can ignore days without any loans in your output.
+
+#18. In the trans table, for account_id 396, sum the amount of transactions for each type (VYDAJ = Outgoing, PRIJEM = Incoming). Your output should have the account_id, 
+#the type and the sum of amount, named as total_amount. Sort alphabetically by type.
+
+#19. From the previous output, translate the values for type to English, rename the column to transaction_type, 
+#round total_amount down to an integer
+
+#20. From the previous result, modify your query so that it returns only one row, with a column for incoming amount, 
+#outgoing amount and the difference.
+
+#21. Continuing with the previous example, rank the top 10 account_ids based on their difference.
